@@ -10,7 +10,7 @@ if wezterm.config_builder then
 end
 
 -- Colors
-config.color_scheme = "Hardcore"
+config.color_scheme = "Tokyo Night"
 
 -- Fonts
 config.font_size = 13.0
@@ -20,7 +20,7 @@ config.font = wezterm.font("JetBrains Mono", { weight = 500 })
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
 config.adjust_window_size_when_changing_font_size = false
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 -- config.use_dead_keys = false
 config.scrollback_lines = 5000
 
@@ -126,6 +126,21 @@ config.key_tables = {
 		{ key = "Escape", action = act.PopKeyTable },
 		{ key = "DownArrow", action = act.ActivatePaneDirection("Down") },
 		{ key = "Enter", action = act.PopKeyTable },
+
+		{
+			key = "d",
+			action = act.CloseCurrentPane({ confirm = true }),
+		},
+
+		{
+			-- For Homerow Mod
+			key = "f",
+			action = act.TogglePaneZoomState,
+		},
+		{
+			key = "z",
+			action = act.TogglePaneZoomState,
+		},
 	},
 
 	resize = {
