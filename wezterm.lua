@@ -9,12 +9,15 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- Spawn a fish shell in login mode
+config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
+
 -- Colors
 config.color_scheme = "Tokyo Night"
 
 -- Fonts
 config.font_size = 13.0
-config.font = wezterm.font("JetBrains Mono", { weight = 500 })
+config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = 500 })
 
 -- Behavior
 config.send_composed_key_when_left_alt_is_pressed = false
