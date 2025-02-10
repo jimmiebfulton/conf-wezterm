@@ -19,7 +19,7 @@ config.set_environment_variables = {
 	XDG_CONFIG_HOME = "/Users/jimmie/.config",
 }
 
--- Spawn a fish shell in login mode
+-- Spawn a fish nu in login mode
 config.default_prog = { "/opt/homebrew/bin/nu", "-l" }
 
 -- Colors
