@@ -9,8 +9,18 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.initial_rows = 50
+config.initial_cols = 180
+
+config.set_environment_variables = {
+	-- This changes the default prompt for cmd.exe to report the
+	-- current directory using OSC 7, show the current time and
+	-- the current directory colored in the prompt.
+	XDG_CONFIG_HOME = "/Users/jimmie/.config",
+}
+
 -- Spawn a fish shell in login mode
-config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
+config.default_prog = { "/opt/homebrew/bin/nu", "-l" }
 
 -- Colors
 config.color_scheme = "Tokyo Night"
