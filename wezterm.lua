@@ -10,12 +10,9 @@ if wezterm.config_builder then
 end
 
 config.initial_rows = 50
-config.initial_cols = 180
+config.initial_cols = 120
 
 config.set_environment_variables = {
-	-- This changes the default prompt for cmd.exe to report the
-	-- current directory using OSC 7, show the current time and
-	-- the current directory colored in the prompt.
 	XDG_CONFIG_HOME = "/Users/jimmie/.config",
 }
 
