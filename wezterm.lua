@@ -192,6 +192,7 @@ config.key_tables = {
 		},
 		{ key = "n", action = act.SpawnTab("CurrentPaneDomain") },
 		{ key = "t", action = act.ShowTabNavigator },
+		{ key = "d", action = act.CloseCurrentTab({ confirm = false }) },
 		{ key = "Escape", action = act.PopKeyTable },
 		{ key = "Enter", action = act.PopKeyTable },
 	},
