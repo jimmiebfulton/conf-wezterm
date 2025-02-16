@@ -60,37 +60,69 @@ config.keys = {
 	{ key = "Space", mods = "LEADER", action = act.PaneSelect },
 
 	-- Create Panes
-	{ key = "UpArrow", mods = "CMD|SHIFT", action = act.SplitPane({
-		direction = "Up",
-	}) },
-	{ key = "DownArrow", mods = "CMD|SHIFT", action = act.SplitPane({
-		direction = "Down",
-	}) },
+	{
+		key = "UpArrow",
+		mods = "CMD|SHIFT",
+		action = act.SplitPane({
+			direction = "Up",
+		}),
+	},
+	{
+		key = "DownArrow",
+		mods = "CMD|SHIFT",
+		action = act.SplitPane({
+			direction = "Down",
+		}),
+	},
 
-	{ key = "RightArrow", mods = "CMD|SHIFT", action = act.SplitPane({
-		direction = "Right",
-	}) },
-	{ key = "LeftArrow", mods = "CMD|SHIFT", action = act.SplitPane({
-		direction = "Left",
-	}) },
+	{
+		key = "RightArrow",
+		mods = "CMD|SHIFT",
+		action = act.SplitPane({
+			direction = "Right",
+		}),
+	},
+	{
+		key = "LeftArrow",
+		mods = "CMD|SHIFT",
+		action = act.SplitPane({
+			direction = "Left",
+		}),
+	},
 
 	-- Resize Panes
-	{ key = "UpArrow", mods = "CMD|ALT", action = act.AdjustPaneSize({
-		"Up",
-		1,
-	}) },
-	{ key = "DownArrow", mods = "CMD|ALT", action = act.AdjustPaneSize({
-		"Down",
-		1,
-	}) },
-	{ key = "RightArrow", mods = "CMD|ALT", action = act.AdjustPaneSize({
-		"Right",
-		1,
-	}) },
-	{ key = "LeftArrow", mods = "CMD|ALT", action = act.AdjustPaneSize({
-		"Left",
-		1,
-	}) },
+	{
+		key = "UpArrow",
+		mods = "CMD|ALT",
+		action = act.AdjustPaneSize({
+			"Up",
+			1,
+		}),
+	},
+	{
+		key = "DownArrow",
+		mods = "CMD|ALT",
+		action = act.AdjustPaneSize({
+			"Down",
+			1,
+		}),
+	},
+	{
+		key = "RightArrow",
+		mods = "CMD|ALT",
+		action = act.AdjustPaneSize({
+			"Right",
+			1,
+		}),
+	},
+	{
+		key = "LeftArrow",
+		mods = "CMD|ALT",
+		action = act.AdjustPaneSize({
+			"Left",
+			1,
+		}),
+	},
 
 	--  Tab Navigation
 	{ key = "RightArrow", mods = "CMD|CTRL", action = act.ActivateTabRelative(1) },
