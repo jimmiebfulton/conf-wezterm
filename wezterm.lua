@@ -1,13 +1,11 @@
 -- Pull in the APIs
 local wezterm = require("wezterm")
-local mux = wezterm.mux
 local act = wezterm.action
 
--- This table will hold the configuration.
-local config = {}
-if wezterm.config_builder then
-	config = wezterm.config_builder()
-end
+-- This will hold the configuration.
+local config = wezterm.config_builder()
+
+config.front_end = "WebGpu"
 
 config.initial_rows = 50
 config.initial_cols = 120
@@ -16,7 +14,7 @@ config.set_environment_variables = {
 	XDG_CONFIG_HOME = "/Users/jimmie/.config",
 }
 
--- Spawn a fish nu in login mode
+-- Spawn a nu shell in login mode
 config.default_prog = { "/opt/homebrew/bin/nu", "-l" }
 
 -- Colors
@@ -54,9 +52,13 @@ config.leader = { key = "Space", mods = "CMD", timeout_milliseconds = 1500 }
 config.keys = {
 	-- Panes Navigation
 	{ key = "UpArrow", mods = "CMD", action = act.ActivatePaneDirection("Up") },
+	{ key = "k", mods = "CMD", action = act.ActivatePaneDirection("Up") },
 	{ key = "DownArrow", mods = "CMD", action = act.ActivatePaneDirection("Down") },
+	{ key = "j", mods = "CMD", action = act.ActivatePaneDirection("Down") },
 	{ key = "LeftArrow", mods = "CMD", action = act.ActivatePaneDirection("Left") },
+	{ key = "h", mods = "CMD", action = act.ActivatePaneDirection("Left") },
 	{ key = "RightArrow", mods = "CMD", action = act.ActivatePaneDirection("Right") },
+	{ key = "l", mods = "CMD", action = act.ActivatePaneDirection("Right") },
 	{ key = "Space", mods = "LEADER", action = act.PaneSelect },
 
 	-- Create Panes
@@ -68,7 +70,21 @@ config.keys = {
 		}),
 	},
 	{
+		key = "k",
+		mods = "CMD|SHIFT",
+		action = act.SplitPane({
+			direction = "Up",
+		}),
+	},
+	{
 		key = "DownArrow",
+		mods = "CMD|SHIFT",
+		action = act.SplitPane({
+			direction = "Down",
+		}),
+	},
+	{
+		key = "j",
 		mods = "CMD|SHIFT",
 		action = act.SplitPane({
 			direction = "Down",
@@ -83,7 +99,21 @@ config.keys = {
 		}),
 	},
 	{
+		key = "l",
+		mods = "CMD|SHIFT",
+		action = act.SplitPane({
+			direction = "Right",
+		}),
+	},
+	{
 		key = "LeftArrow",
+		mods = "CMD|SHIFT",
+		action = act.SplitPane({
+			direction = "Left",
+		}),
+	},
+	{
+		key = "h",
 		mods = "CMD|SHIFT",
 		action = act.SplitPane({
 			direction = "Left",
@@ -126,7 +156,9 @@ config.keys = {
 
 	--  Tab Navigation
 	{ key = "RightArrow", mods = "CMD|CTRL", action = act.ActivateTabRelative(1) },
+	{ key = "l", mods = "CMD|CTRL", action = act.ActivateTabRelative(1) },
 	{ key = "LeftArrow", mods = "CMD|CTRL", action = act.ActivateTabRelative(-1) },
+	{ key = "h", mods = "CMD|CTRL", action = act.ActivateTabRelative(-1) },
 
 	{
 		key = "n",
