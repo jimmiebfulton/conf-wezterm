@@ -18,7 +18,9 @@ config.set_environment_variables = {
 config.default_prog = { "/opt/homebrew/bin/nu", "-l" }
 
 -- Colors
-config.color_scheme = "Tokyo Night"
+-- config.color_scheme = "Tokyo Night"
+-- config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Onedark"
 
 -- Fonts
 config.font_size = 13.0
